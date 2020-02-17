@@ -1,0 +1,18 @@
+<h2>New game</h2>
+<br>
+<h4>Letters:</h4>
+<div id="letters">
+<% @letters.each do | letter | %>
+  <p>
+    <%= letter %>
+    </p>
+<% end %>
+</div>
+<div>
+<h4 id="letters">form the longest word possible from the letters above</h4>
+</div>
+<form action="/score" id='form'>
+  <input type="text" name="question" placeholder="Enter your word:">
+  <input type="submit" value="submit">
+  <input name="letters" type="hidden" value = '<%= @letters.join %>' />
+</form>
