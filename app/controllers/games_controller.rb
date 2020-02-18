@@ -12,9 +12,9 @@ class GamesController < ApplicationController
     url = "https://wagon-dictionary.herokuapp.com/#{word}"
     language = open(url).read
     lang = JSON.parse(language)
-    @error = "#{word} isn't a word" if lang['found'] == false
+    @error = "#{word} isn't a word dum dum." if lang['found'] == false
     @winner = 'good job' if lang['found'] == true && check(letters, word) == true
-    @not = 'cheater' if check(letters, word) == false
+    @not = 'Cheater, false letters' if check(letters, word) == false
   end
 
   def check(grid, word)
